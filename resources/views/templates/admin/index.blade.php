@@ -22,12 +22,12 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-    @include('templates.sidebar')
+    @include('templates.admin.sidebar')
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-        @include('templates.navbar')
+        @include('templates.admin.navbar')
         <div class="container-fluid py-4">
             @yield('content')
-            @include('templates.footer')
+            @include('templates.admin.footer')
         </div>
     </main>
     {{-- <div class="fixed-plugin">
