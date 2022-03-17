@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BeritaController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
@@ -25,4 +26,12 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/absen/{absen}/save', [AbsenController::class, 'absenSave']);
     // Route::get('/absen/{absen}/update', [AbsenController::class, 'absenUpdate']);
     // Route::get('/absen/{absen}/delete', [AbsenController::class, 'absenDelete']);
+
+    Route::get('admin/berita', [BeritaController::class, 'index']);
+    Route::get('admin/berita/tambah', [BeritaController::class, 'tambah']);
+    Route::post('admin/berita/tambah', [BeritaController::class, 'store']);
+    Route::get('admin/berita/{berita}/edit', [BeritaController::class, 'edit']);
+    Route::post('admin/berita/{berita}/update', [BeritaController::class, 'update']);
+    Route::post('admin/berita/delete', [BeritaController::class, 'delete']);
+    Route::post('admin/kategori/tambah', [BeritaController::class, 'storeKategori']);
 });

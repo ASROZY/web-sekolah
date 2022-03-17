@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,24 +18,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/berita/{slug}', [HomeController::class, 'berita']);
 
-Route::get('about', function (){
+Route::get('about', function () {
     return view('about');
 });
 
-Route::get('sejarah', function (){
+Route::get('sejarah', function () {
     return view('sejarah');
-
 });
 
-Route::get('visi-misi', function(){
+Route::get('visi-misi', function () {
     return view('visi-misi');
 });
 
-Route::get('berita acara', function(){
+Route::get('berita acara', function () {
     return view('berita acara');
 });
 
@@ -42,5 +41,5 @@ Route::get('berita acara', function(){
 //     return view('admin.dashboard');
 // })->name('dashboard');
 
-//require __DIR__ . '/auth.php';
-//require __DIR__ . '/etc/etc.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/etc/etc.php';

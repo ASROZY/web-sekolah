@@ -1,6 +1,6 @@
-@extends('templates.user.index')
+@extends('templates.user.index', ['title'=> 'Home'])
 @section('content')
-{{-- <main id="main"> --}}
+    {{-- <main id="main"> --}}
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center pt-1">
         <div class="container position-relative my-1" data-aos="fade-up" data-aos-delay="100">
@@ -12,7 +12,7 @@
             </div>
             <div class="text-center">
                 {{-- <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
-            </div> 
+            </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -24,16 +24,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" style="max-height: 500px"
-                            alt="...">
+                        <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" style="max-height: 500px"
-                            alt="...">
+                        <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" style="max-height: 500px"
-                            alt="...">
+                        <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -56,12 +53,12 @@
                         <h4 class="title"><a href="">BERITA ACARA</a></h4>
                         <p class="description">
                             <li>Tahasus Kitab Kuning </li>
-                            <li>Sorongan Al-Qur'an</li> 
+                            <li>Sorongan Al-Qur'an</li>
                             <li>Tahfidzul Qur'an</li>
                         <h4 class="title"><a href="">PROGRAM LIFE SKILL</a></h4>
-                            <li>Budidaya</li>
-                             <li>Tataboga</li>
-                             </p>
+                        <li>Budidaya</li>
+                        <li>Tataboga</li>
+                        </p>
                     </div>
                 </div>
 
@@ -93,7 +90,7 @@
                         <p class="description">
                             <li>Kurikulum Nasional</li>
                             <li>Kurikulum Pondok Pesantren</li>
-                            </p>
+                        </p>
                     </div>
                 </div>
 
@@ -204,11 +201,11 @@
 
                 <div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
                     {{-- <img src="{{ asset('images/sejarah.jpg') }}" class="d-block w-100" style="max-height: 500px" --}}
-                    {{-- alt="...">  --}}
-                    {{-- <img src="{{ asset('images/sejarah.jpg') }}" height="200" class="bi me-2" alt="">  --}}
-                    {{-- <img src="{{ asset('onepage/assets/img/about-video.jpg') }}" class="img-fluid" alt="">  
+                    {{-- alt="..."> --}}
+                    {{-- <img src="{{ asset('images/sejarah.jpg') }}" height="200" class="bi me-2" alt=""> --}}
+                    {{-- <img src="{{ asset('onepage/assets/img/about-video.jpg') }}" class="img-fluid" alt="">
                      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4" --}}
-                         {{-- data-vbtype="video" data-autoplay="true"></a>  --}} 
+                    {{-- data-vbtype="video" data-autoplay="true"></a> --}}
                 </div>
 
                 {{-- <div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
@@ -250,33 +247,27 @@
 
             <div class="row">
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
-                    data-aos="zoom-in">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                     <img src="{{ asset('onepage/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
                 </div>
 
@@ -285,7 +276,7 @@
         </div>
     </section><!-- End Clients Section -->
 
-      <!-- ======= Team Section ======= -->
+    <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
         <div class="container" data-aos="fade-up">
 
@@ -351,7 +342,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                     <div class="member">
@@ -363,20 +354,20 @@
                                 <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
-                         </div>
-                         <div class="member-info">
-                             <h4>Lina</h4>
-                             <span>Sekertaris</span>
-                         </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Lina</h4>
+                            <span>Sekertaris</span>
+                        </div>
                     </div>
-                          </section><!-- End Team Section -->
-                    
+    </section><!-- End Team Section -->
 
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
 
-        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    </div>
+
+    </div>
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Services Section ======= -->
@@ -438,8 +429,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                    data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box iconbox-yellow">
                         <div class="icon">
                             <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -454,8 +444,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                    data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box iconbox-red">
                         <div class="icon">
                             <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -470,8 +459,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                    data-aos-delay="300">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box iconbox-teal">
                         <div class="icon">
                             <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -501,7 +489,7 @@
                     mollit anim id est laborum.</p>
                 <a class="cta-btn" href="#">Call To Action</a>
             </div> --}}
-        </div>
+            </div>
     </section><!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
@@ -530,7 +518,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>App 1</h4>
                             <p>App</p>
@@ -538,8 +527,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-1.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -547,7 +535,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Web 3</h4>
                             <p>Web</p>
@@ -555,8 +544,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-2.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -564,7 +552,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>App 2</h4>
                             <p>App</p>
@@ -572,8 +561,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-3.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -581,7 +569,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-4.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-4.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Card 2</h4>
                             <p>Card</p>
@@ -589,8 +578,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-4.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -598,7 +586,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-5.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-5.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Web 2</h4>
                             <p>Web</p>
@@ -606,8 +595,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-5.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -615,7 +603,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-6.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-6.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>App 3</h4>
                             <p>App</p>
@@ -623,8 +612,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-6.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -632,7 +620,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-7.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-7.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Card 1</h4>
                             <p>Card</p>
@@ -640,8 +629,7 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-7.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -649,7 +637,8 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-8.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-8.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Card 3</h4>
                             <p>Card</p>
@@ -657,16 +646,16 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-8.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
-                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-9.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('onepage/assets/img/portfolio/portfolio-9.jpg') }}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Web 3</h4>
                             <p>Web</p>
@@ -674,11 +663,10 @@
                                 <a href="{{ asset('onepage/assets/img/portfolio/portfolio-9.jpg') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                                    
+                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -727,7 +715,7 @@
                             <p>0851-7150-0098</p>
                         </div>
 
-                        <div class ="instagram"></i>
+                        <div class="instagram"></i>
                             <i class="bx bxl-instagram"></i>
                             <h4>Instagram:</h4>
                             <p>smptdr27</p>
@@ -772,87 +760,97 @@
 
         </div>
     </section><!-- End Contact Section -->
-    
-     <!-- ======= Testimonials Section ======= -->
+
+    <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
         <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-            <h2>Team</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                </div>
-            </div><!-- End testimonial item -->
-
+            <div class="section-title">
+                <h2>Team</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+                    sit in iste officiis commodi quidem hic quas.</p>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
+                                Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                            <h3>Saul Goodman</h3>
+                            <h4>Ceo &amp; Founder</h4>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum
+                                eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim
+                                culpa.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                            <h3>Sara Wilsson</h3>
+                            <h4>Designer</h4>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
+                                minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                            <h3>Jena Karlis</h3>
+                            <h4>Store Owner</h4>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
+                                velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
+                                veniam.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam
+                                enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore
+                                nisi cillum quid.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                            <h3>John Larson</h3>
+                            <h4>Entrepreneur</h4>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
         </div>
     </section><!-- End Testimonials Section -->
@@ -926,96 +924,32 @@
         </div>
     </section><!-- End Pricing Section -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <!-- ======= Berita Section ======= -->
+    <section id="berita" class="berita section-bg">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                {{-- <h2>Frequently Asked Questions</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Berita & Pengumuman</h2>
             </div>
 
-            <div class="faq-list">
-                <ul>
-                    <li data-aos="fade-up">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at
-                            lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                            <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                purus non.
-                            </p>
+            <div class="row">
+                @forelse ($berita as $item)
+                    <div class="card mx-2" style="width: 18rem;">
+                        <img src="{{ asset($item->thumbnail) }}" class="card-img-top" alt="{{ $item->judul }}">
+                        <div class="card-body">
+                            <h5 class="card-title"><a
+                                    href="{{ url('berita/' . $item->slug) }}">{{ $item->judul }}</a></h5>
+                            <p class="card-text text-berita">{!! mb_strimwidth($item->keterangan, 0, 70, '.....') !!}</p>
+                            <a href="{{ url('berita/' . $item->slug) }}">Lanjutkan baca..</a>
                         </div>
-                    </li>
-
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi
-                            enim nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                cursus turpis massa tincidunt dui.
-                            </p>
-                        </div>
-                    </li>
-
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur
-                            adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
-                                Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
-                                tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                            </p>
-                        </div>
-                    </li>
-
-                    <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam
-                            aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                            </p>
-                        </div>
-                    </li>
-
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare.
-                            Varius vel pharetra vel turpis nunc eget lorem dolor? <i
-                                class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                            </p>
-                        </div> --}}
-                    </li>
-
-                </ul>
+                    </div>
+                @empty
+                    <div class="text-center">Berita masih kosong</div>
+                @endforelse
+                {{ $berita->links() }}
             </div>
 
         </div>
     </section><!-- End Frequently Asked Questions Section -->
-{{-- </main> --}}
+    {{-- </main> --}}
 @endsection
