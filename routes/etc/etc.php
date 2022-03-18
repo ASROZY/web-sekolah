@@ -27,6 +27,13 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/absen/{absen}/save', [AbsenController::class, 'absenSave']);
     // Route::get('/absen/{absen}/update', [AbsenController::class, 'absenUpdate']);
     // Route::get('/absen/{absen}/delete', [AbsenController::class, 'absenDelete']);
+    Route::get('admin/pengurus', [AdminController::class, 'indexPengurus']);
+    Route::get('admin/pengurus/tambah', [AdminController::class, 'tambahPengurus']);
+    Route::post('admin/pengurus/tambah', [AdminController::class, 'storePengurus']);
+    Route::get('admin/pengurus/{pengurus}/edit', [AdminController::class, 'editPengurus']);
+    Route::post('admin/pengurus/{pengurus}/update', [AdminController::class, 'updatePengurus']);
+    Route::post('admin/pengurus/delete', [AdminController::class, 'deletePengurus']);
+
     Route::get('admin/banner', [BannerController::class, 'index']);
     Route::get('admin/banner/tambah', [BannerController::class, 'tambah']);
     Route::post('admin/banner/tambah', [BannerController::class, 'store']);
