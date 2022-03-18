@@ -18,7 +18,7 @@ class CreateBannersTable extends Migration
             $table->string('judul');
             $table->string('keterangan')->nullable();
             $table->text('img');
-            $table->integer('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

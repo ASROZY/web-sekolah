@@ -43,6 +43,39 @@
                 <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder opacity-6">PAGES</h6>
             </li>
             <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#menu1"
+                    class="nav-link {{ request()->segment(1) == 'admin' ? 'active' : '' }}" aria-controls="menu1"
+                    role="button" aria-expanded="false">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-microsoft" viewBox="0 0 16 16">
+                            <path
+                                d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z" />
+                        </svg>
+                    </div>
+                    <span class="nav-link-text ms-1">Manajemen Menu</span>
+                </a>
+                <div class="collapse {{ request()->segment(1) == 'admin' ? 'show' : '' }}" id="menu1">
+                    <ul class="nav ms-4 ps-3">
+                        <li class="nav-item ">
+                            <a class="nav-link {{ request()->segment(2) == 'banner' ? 'active' : '' }}"
+                                href="{{ url('admin/banner') }}">
+                                <span class="sidenav-mini-icon"> M </span>
+                                <span class="sidenav-normal"> Banner </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->segment(2) == 'berita' ? 'active' : '' }}"
+                                href="{{ url('admin/berita') }}">
+                                <span class="sidenav-mini-icon"> P </span>
+                                <span class="sidenav-normal"> Berita </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#pagesExamples"
                     class="nav-link {{ request()->segment(1) == 'master' ? 'active' : '' }}"
                     aria-controls="pagesExamples" role="button" aria-expanded="false">
@@ -161,38 +194,6 @@
                             <a class="nav-link " href="../../../pages/pages/notifications.html">
                                 <span class="sidenav-mini-icon"> N </span>
                                 <span class="sidenav-normal"> Notifications </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#menu1"
-                    class="nav-link {{ request()->segment(1) == 'admin' ? 'active' : '' }}" aria-controls="menu1"
-                    role="button" aria-expanded="false">
-                    <div
-                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-microsoft" viewBox="0 0 16 16">
-                            <path
-                                d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z" />
-                        </svg>
-                    </div>
-                    <span class="nav-link-text ms-1">Manajemen Menu</span>
-                </a>
-                <div class="collapse {{ request()->segment(1) == 'admin' ? 'show' : '' }}" id="menu1">
-                    <ul class="nav ms-4 ps-3">
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->segment(2) == 'berita' ? 'active' : '' }}"
-                                href="{{ url('admin/berita') }}">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal"> Berita </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " href="../../../pages/pages/messages.html">
-                                <span class="sidenav-mini-icon"> M </span>
-                                <span class="sidenav-normal"> Kelulusan </span>
                             </a>
                         </li>
                     </ul>
@@ -403,7 +404,8 @@
     <div class="sidenav-footer mx-3 ">
         <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
             <div class="full-background"
-                style="background-image: url('{{ asset('soft/assets/img/curved-images/white-curved.jpeg') }}')"></div>
+                style="background-image: url('{{ asset('soft/assets/img/curved-images/white-curved.jpeg') }}')">
+            </div>
             <div class="card-body text-start p-3 w-100">
                 <div
                     class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">

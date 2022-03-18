@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BeritaController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,12 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/absen/{absen}/save', [AbsenController::class, 'absenSave']);
     // Route::get('/absen/{absen}/update', [AbsenController::class, 'absenUpdate']);
     // Route::get('/absen/{absen}/delete', [AbsenController::class, 'absenDelete']);
+    Route::get('admin/banner', [BannerController::class, 'index']);
+    Route::get('admin/banner/tambah', [BannerController::class, 'tambah']);
+    Route::post('admin/banner/tambah', [BannerController::class, 'store']);
+    Route::get('admin/banner/{banner}/edit', [BannerController::class, 'edit']);
+    Route::post('admin/banner/{banner}/update', [BannerController::class, 'update']);
+    Route::post('admin/banner/delete', [BannerController::class, 'delete']);
 
     Route::get('admin/berita', [BeritaController::class, 'index']);
     Route::get('admin/berita/tambah', [BeritaController::class, 'tambah']);
@@ -33,5 +40,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/berita/{berita}/edit', [BeritaController::class, 'edit']);
     Route::post('admin/berita/{berita}/update', [BeritaController::class, 'update']);
     Route::post('admin/berita/delete', [BeritaController::class, 'delete']);
+
     Route::post('admin/kategori/tambah', [BeritaController::class, 'storeKategori']);
 });

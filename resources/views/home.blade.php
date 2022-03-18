@@ -15,23 +15,22 @@
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                    @foreach ($banner as $item)
+                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="{{ $loop->iteration - 1 }}"
+                            @if ($loop->first) class="active" aria-current="true" @endif
+                            aria-label="Slide {{ $loop->iteration }}"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" style="max-height: 500px" alt="...">
-                    </div>
+                    @forelse ($banner as $item)
+                        <div class="carousel-item @if ($loop->first) active @endif">
+                            <img src="{{ asset($item->img) }}" class="d-block w-100" style="max-height: 500px"
+                                alt="{{ $item->banner }}">
+                        </div>
+                    @empty
+                        Banner Kosong
+                    @endforelse
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
