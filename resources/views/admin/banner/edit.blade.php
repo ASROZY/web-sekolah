@@ -19,13 +19,15 @@
             <form action="{{ url('admin/banner/' . $banner->id . '/update') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
+                <img src="{{ $banner->img }}" id="imagePreview" class="col-4" alt="{{ $banner->img }}">
                 <div class="form-group mb-3 px-3 row">
-                    <label for="formFile" class="form-label">Banner</label>
-                    <img src="{{ $banner->img }}" class="col-4" alt="">
-                    <input class="form-control @error('banner') is-invalid @enderror" type="file" name="banner">
+                    <label for="banner" class="form-label">Banner</label>
+                    <input class="form-control @error('banner') is-invalid @enderror" type="file" name="banner"
+                        onchange="preview(this);">
                 </div>
                 @error('banner')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class=" alert alert-danger">{{ $message }}
+                    </div>
                 @enderror
                 <div class="form-group">
                     <label for="judul">Judul</label>
@@ -49,6 +51,7 @@
     </div>
 @endsection
 @push('js')
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('summernote/summernote.js') }}"></script>
     <script>
@@ -70,5 +73,16 @@
                 )
             }
         });
+
+        function preview(banner) {
+            if (banner.files && banner.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#imagePreview').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(banner.files[0]);
+            }
+        }
     </script>
 @endpush

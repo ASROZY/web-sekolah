@@ -37,6 +37,7 @@
                 <li><a class="nav-link scrollto" href="{{ url('/') }}#testimonials">Team</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/') }}#berita">Berita</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/login') }}">Login</a></li>
+                <li><a class="nav-link scrollto" href="{{ url('/register/ppdb') }}">PPDB</a></li>
                 {{-- <li><a class="getstarted scrollto" href="{{ url('/') }}#about">Get Started</a></li> --}}
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

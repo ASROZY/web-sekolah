@@ -19,10 +19,12 @@
             <form action="{{ url('admin/berita/' . $berita->id . '/update') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="form-group mb-3 px-3 row">
-                    <label for="formFile" class="form-label">Thumbnail</label>
-                    <img src="{{ $berita->thumbnail }}" class="col-4" alt="">
-                    <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" name="thumbnail">
+                <img src="{{ $berita->thumbnail }}" id="imagePreview" class="col-4"
+                    alt="{{ $berita->thumbnail }}">
+                <div class="form-group mb-3 py-2">
+                    <label for="thumbnail">Thumbnail</label>
+                    <input class="form-control @error('thumbnail') is-invalid @enderror" type="file" name="thumbnail"
+                        onchange="preview(this);">
                 </div>
                 @error('thumbnail')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -133,5 +135,16 @@
                 )
             }
         });
+
+        function preview(foto) {
+            if (foto.files && foto.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#imagePreview').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(foto.files[0]);
+            }
+        }
     </script>
 @endpush

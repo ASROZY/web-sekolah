@@ -23,6 +23,15 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if (Auth::user()->type == 3) {
+                    return redirect('ppdb/daftar');
+                } elseif (Auth::user()->type == 0) {
+                    return redirect('siswa/dashboard');
+                } elseif (Auth::user()->type == 1) {
+                    return redirect('/dashboard');
+                } elseif (Auth::user()->type == 2) {
+                    return redirect('/dashboard');
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

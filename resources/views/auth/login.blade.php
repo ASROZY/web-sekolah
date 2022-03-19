@@ -107,15 +107,23 @@
                                         @csrf
                                         <label>Email</label>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" name="email" placeholder="Email"
-                                                aria-label="Email" aria-describedby="email-addon">
+                                            <input type="email"
+                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                                         </div>
+                                        @error('email')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                         <label>Password</label>
                                         <div class="mb-3">
-                                            <input type="password" class="form-control" name="password"
-                                                placeholder="Password" aria-label="Password"
+                                            <input type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" placeholder="Password" aria-label="Password"
                                                 aria-describedby="password-addon">
                                         </div>
+                                        @error('password')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                                             <label class="form-check-label" for="rememberMe">Remember me</label>
@@ -129,7 +137,8 @@
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <p class="mb-4 text-sm mx-auto">
                                         Don't have an account?
-                                        <a href="javascript:;" class="text-info text-gradient font-weight-bold">Sign
+                                        <a href="{{ url('register') }}"
+                                            class="text-info text-gradient font-weight-bold">Sign
                                             up</a>
                                     </p>
                                 </div>

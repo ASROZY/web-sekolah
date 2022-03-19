@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,7 +33,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user()->type == 1) {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        } elseif (Auth::user()->type == 2) {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        } elseif (Auth::user()->type == 3) {
+            return redirect('ppdb/daftar');
+        } else {
+            return redirect('siswa/dashboard');
+        }
     }
 
     /**

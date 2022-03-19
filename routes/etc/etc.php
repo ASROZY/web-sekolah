@@ -3,10 +3,11 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\PpdbController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::middleware(['auth', 'authAdmin'])->group(function () {
+    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     // Route::get('/guru', [GuruController::class, 'guru']);
     // Route::post('/guru/tambah', [GuruController::class, 'guruTambah']);
     // Route::post('/guru/{guru}/edit', [GuruController::class, 'guruEdit']);
@@ -49,4 +50,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('admin/berita/delete', [BeritaController::class, 'delete']);
 
     Route::post('admin/kategori/tambah', [BeritaController::class, 'storeKategori']);
+
+    Route::get('ppdb/pendaftar', [PpdbController::class, 'index']);
+    Route::get('ppdb/{id}/detail', [PpdbController::class, 'detailPpdb']);
+});
+Route::middleware(['auth', 'authPpdb'])->group(function () {
+    Route::get('ppdb/data', [PpdbController::class, 'detailData']);
+    Route::get('ppdb/daftar', [PpdbController::class, 'register']);
+    Route::post('ppdb/register', [PpdbController::class, 'ppdbStore']);
 });
