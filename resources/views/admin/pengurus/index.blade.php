@@ -43,10 +43,10 @@
                                 <td class="align-middle">
                                     <a href="{{ url('admin/pengurus/' . $item->id . '/edit') }}"
                                         class="btn btn-sm btn-warning" data-toggle="tooltip"
-                                        data-original-title="Edit user">
+                                        data-original-title="Edit User">
                                         Edit
                                     </a>
-                                    <button class="btn btn-sm btn-danger" onclick="deleteBanner({{ $item->id }})">
+                                    <button class="btn btn-sm btn-danger" onclick="deletePengurus({{ $item->id }})">
                                         Hapus
                                     </button>
                                 </td>
@@ -100,16 +100,14 @@
 
         });
 
-        function deleteBanner(id) {
+        function deletePengurus(id) {
             Swal.fire({
                 title: 'Apa kamu yakin menghapusnya?',
-                showDenyButton: true,
                 showCancelButton: true,
                 confirmButtonText: 'Hapus',
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    Swal.fire('Dihapus!', '', 'success');
                     $.ajax({
                         url: '{{ url('admin/pengurus/delete') }}',
                         type: "post",
@@ -120,7 +118,7 @@
                         dataType: 'json',
                         success: function(res) {
                             if (res.success) {
-                                Swal.fire('Data berhasil dihapus!', '', 'success');
+                                Swal.fire(res.message, '', 'success');
                                 // $('#datatable').DataTable().ajax.reload();
                                 location.reload();
                             }

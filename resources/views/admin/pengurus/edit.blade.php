@@ -6,15 +6,6 @@
         </div>
         <hr>
         <div class="card-body p-3">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form action="{{ url('admin/pengurus/' . $pengurus->id . '/update') }}" method="post">
                 @csrf
                 <div class="form-group mb-3 py-3">
@@ -23,7 +14,7 @@
                         value="{{ $pengurus->name }}">
                 </div>
                 @error('name')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -31,7 +22,7 @@
                         value="{{ $pengurus->email }}" placeholder="email">
                 </div>
                 @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group mb-3 py-3">
                     <label for="phone" class="form-label">No Telephone</label>
@@ -39,7 +30,7 @@
                         value="{{ $pengurus->phone }}">
                 </div>
                 @error('phone')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="type" class="col">Type Akun</label>
@@ -49,14 +40,14 @@
                     </select>
                 </div>
                 @error('type')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group mb-3 py-3">
                     <label for="password" class="form-label">Password</label>
                     <input class="form-control @error('password') is-invalid @enderror" type="password" name="password">
                 </div>
                 @error('password')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>

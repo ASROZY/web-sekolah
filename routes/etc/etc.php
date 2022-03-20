@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\PpdbController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,17 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
 
     Route::get('ppdb/pendaftar', [PpdbController::class, 'index']);
     Route::get('ppdb/{id}/detail', [PpdbController::class, 'detailPpdb']);
+    Route::post('ppdb/delete', [PpdbController::class, 'deletePpdb']);
+
+    Route::get('admin/galeri', [GaleriController::class, 'indexAlbum']);
+    Route::post('admin/album', [GaleriController::class, 'storeAlbum']);
+    Route::post('admin/album/delete', [GaleriController::class, 'deleteAlbum']);
+    Route::post('admin/album/status', [GaleriController::class, 'statusAlbum']);
+    Route::post('admin/album/{album}/update', [GaleriController::class, 'updateAlbum']);
+    Route::post('admin/galeri/delete', [GaleriController::class, 'deleteGaleri']);
+    Route::get('admin/galeri/{album}', [GaleriController::class, 'indexGaleri']);
+    Route::post('admin/galeri/{album}', [GaleriController::class, 'storeGaleri']);
+    Route::post('admin/galeri/{galeri}/update', [GaleriController::class, 'updateGaleri']);
 });
 Route::middleware(['auth', 'authPpdb'])->group(function () {
     Route::get('ppdb/data', [PpdbController::class, 'detailData']);

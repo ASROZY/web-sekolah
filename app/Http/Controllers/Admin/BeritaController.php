@@ -45,7 +45,7 @@ class BeritaController extends Controller
         $item = $request->file('thumbnail');
         if ($item) {
             $folder = '/images/berita/';
-            $name = 'IMG_' . Carbon::now()->format('dmY') . '-' . $item->extension();
+            $name = 'IMG_' . Carbon::now()->format('dmY') . '-' . Str::random(6) . '.' . $item->extension();
             $item->move(public_path() . $folder, $name);
             $thumbnail = $folder . $name;
         }
@@ -89,7 +89,7 @@ class BeritaController extends Controller
                 unlink(public_path() . $berita->thumbnail);
             }
             $folder = '/images/berita/';
-            $name = 'IMG_' . Carbon::now()->format('dmY') . '-' . Str::random(5) . $item->extension();
+            $name = 'IMG_' . Carbon::now()->format('dmY') . '-' . Str::random(6) . '.' . $item->extension();
             $item->move(public_path() . $folder, $name);
             $thumbnail = $folder . $name;
             $berita->thumbnail = $thumbnail;
@@ -123,6 +123,9 @@ class BeritaController extends Controller
     public function delete(Request $request)
     {
         $berita = Berita::find($request->id);
+        if (file_exists(public_path($berita->thumbnail))) {
+            unlink(public_path() . $berita->thumbnail);
+        }
         $berita->delete();
 
         return json_encode([

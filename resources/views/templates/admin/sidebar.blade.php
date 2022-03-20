@@ -77,6 +77,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ request()->segment(2) == 'galeri' ? 'active' : '' }}"
+                                    href="{{ url('admin/galeri') }}">
+                                    <span class="sidenav-mini-icon"> P </span>
+                                    <span class="sidenav-normal"> Galeri </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link {{ request()->segment(2) == 'pengurus' ? 'active' : '' }}"
                                     href="{{ url('admin/pengurus') }}">
                                     <span class="sidenav-mini-icon"> P </span>

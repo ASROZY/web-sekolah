@@ -8,6 +8,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PpdbController extends Controller
 {
@@ -123,7 +124,7 @@ class PpdbController extends Controller
         $item = $request->file('foto');
         if ($item) {
             $folder = '/images/ppdb/';
-            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . $item->extension();
+            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . Str::random(6) . '.' . $item->extension();
             $item->move(public_path() . $folder, $name);
             $ppdb->foto = $folder . $name;
         }
@@ -188,5 +189,23 @@ class PpdbController extends Controller
         $data = Formulir::where('user_id', Auth::user()->id)->first();
 
         return view('admin.ppdb.formulir', compact('data'));
+    }
+
+    public function deletePpdb(Request $request)
+    {
+        $pengurus = User::find($request->id);
+        $ppdb = Formulir::where('user_id', $request->id)->first();
+        if ($ppdb) {
+            if (file_exists(public_path($ppdb->foto))) {
+                unlink(public_path() . $ppdb->foto);
+            }
+            $ppdb->delete();
+        }
+        $pengurus->delete();
+
+        return json_encode([
+            'success' => true,
+            'message' => 'Data PPDB berhasil dihapus'
+        ]);
     }
 }

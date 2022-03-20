@@ -7,15 +7,6 @@
         </div>
         <hr>
         <div class="card-body p-3">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form action="{{ url('admin/banner/' . $banner->id . '/update') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
@@ -26,7 +17,7 @@
                         onchange="preview(this);">
                 </div>
                 @error('banner')
-                    <div class=" alert alert-danger">{{ $message }}
+                    <div class="alert alert-danger text-white">{{ $message }}
                     </div>
                 @enderror
                 <div class="form-group">
@@ -35,7 +26,7 @@
                         value="{{ $banner->judul }}" placeholder="judul">
                 </div>
                 @error('judul')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Keterangan</label>
@@ -43,7 +34,7 @@
                         name="keterangan">{{ $banner->keterangan }}</textarea>
                 </div>
                 @error('keterangan')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>

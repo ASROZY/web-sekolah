@@ -62,7 +62,7 @@
                                         Detail Data
                                     </a>
                                 @endif
-                                <button class="btn btn-sm btn-danger" onclick="deleteBanner({{ $item->id }})">
+                                <button class="btn btn-sm btn-danger" onclick="deletePpdb({{ $item->id }})">
                                     Hapus
                                 </button>
                             </td>
@@ -116,18 +116,16 @@ type="text/javascript"></script>
 
     });
 
-    function deleteBanner(id) {
+    function deletePpdb(id) {
         Swal.fire({
             title: 'Apa kamu yakin menghapusnya?',
-            showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Hapus',
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                Swal.fire('Dihapus!', '', 'success');
                 $.ajax({
-                    url: '{{ url('admin/pengurus/delete') }}',
+                    url: '{{ url('ppdb/delete') }}',
                     type: "post",
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -136,15 +134,13 @@ type="text/javascript"></script>
                     dataType: 'json',
                     success: function(res) {
                         if (res.success) {
-                            Swal.fire('Data berhasil dihapus!', '', 'success');
-                            // $('#datatable').DataTable().ajax.reload();
+                            Swal.fire(res.message, '', 'success');
                             location.reload();
                         }
                     },
                     error: function(e) {
                         Swal.fire('Terjadi kesalahan!! silakan coba beberapa lagi', '',
                             'error');
-                        // $('#datatable').DataTable().ajax.reload();
                     }
                 })
             } else if (result.isDenied) {

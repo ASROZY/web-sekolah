@@ -13,7 +13,7 @@
                     <input class="form-control @error('name') is-invalid @enderror" type="text" name="name">
                 </div>
                 @error('name')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -21,14 +21,14 @@
                         placeholder="email">
                 </div>
                 @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group mb-3 py-3">
                     <label for="phone" class="form-label">No Telephone</label>
                     <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone">
                 </div>
                 @error('phone')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="type" class="col">Type Akun</label>
@@ -38,14 +38,14 @@
                     </select>
                 </div>
                 @error('type')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group mb-3 py-3">
                     <label for="password" class="form-label">Password</label>
                     <input class="form-control @error('password') is-invalid @enderror" type="password" name="password">
                 </div>
                 @error('password')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>

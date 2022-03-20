@@ -86,7 +86,7 @@ class AdminController extends Controller
 
         return json_encode([
             'success' => true,
-            'message' => 'pengurus berhasil dihapus'
+            'message' => 'Pengurus berhasil dihapus'
         ]);
     }
 }

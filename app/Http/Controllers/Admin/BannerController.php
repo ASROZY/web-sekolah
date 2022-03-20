@@ -39,7 +39,7 @@ class BannerController extends Controller
         $item = $request->file('banner');
         if ($item) {
             $folder = '/images/banner/';
-            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . $item->extension();
+            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . Str::random(6) . '.' . $item->extension();
             $item->move(public_path() . $folder, $name);
             $img = $folder . $name;
         }
@@ -76,7 +76,7 @@ class BannerController extends Controller
                 unlink(public_path() . $banner->img);
             }
             $folder = '/images/banner/';
-            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . Str::random(5) . $item->extension();
+            $name = 'IMG-' . Carbon::now()->format('dmY') . '-' . Str::random(6) . '.' . $item->extension();
             $item->move(public_path() . $folder, $name);
             $img = $folder . $name;
             $banner->img = $img;
@@ -92,11 +92,14 @@ class BannerController extends Controller
     public function delete(Request $request)
     {
         $banner = Banner::find($request->id);
+        if (file_exists(public_path($banner->img))) {
+            unlink(public_path() . $banner->img);
+        }
         $banner->delete();
 
         return json_encode([
             'success' => true,
-            'message' => 'banner berhasil dihapus'
+            'message' => 'Banner berhasil dihapus'
         ]);
     }
 }

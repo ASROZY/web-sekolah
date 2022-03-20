@@ -16,7 +16,7 @@
                         onchange="preview(this);">
                 </div>
                 @error('banner')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="judul">Judul</label>
@@ -24,14 +24,14 @@
                         placeholder="judul">
                 </div>
                 @error('judul')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Keterangan</label>
                     <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" rows="3"></textarea>
                 </div>
                 @error('keterangan')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>

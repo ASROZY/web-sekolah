@@ -16,7 +16,7 @@
                         onchange="preview(this);">
                 </div>
                 @error('thumbnail')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="judul">Judul</label>
@@ -24,7 +24,7 @@
                         placeholder="judul">
                 </div>
                 @error('judul')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <div class="row">
@@ -45,7 +45,7 @@
                     </select>
                 </div>
                 @error('kategori_id')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Berita</label>
@@ -53,7 +53,7 @@
                         rows="3"></textarea>
                 </div>
                 @error('keterangan')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>
@@ -77,7 +77,7 @@
                                         id="kategori" name="kategori" placeholder="Kategori">
                                 </div>
                                 @error('kategori')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="modal-footer">

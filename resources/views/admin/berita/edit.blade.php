@@ -7,15 +7,6 @@
         </div>
         <hr>
         <div class="card-body p-3">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form action="{{ url('admin/berita/' . $berita->id . '/update') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
@@ -27,7 +18,7 @@
                         onchange="preview(this);">
                 </div>
                 @error('thumbnail')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="judul">Judul</label>
@@ -35,7 +26,7 @@
                         value="{{ $berita->judul }}" placeholder="judul">
                 </div>
                 @error('judul')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <div class="row">
@@ -56,7 +47,7 @@
                     </select>
                 </div>
                 @error('kategori_id')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Berita</label>
@@ -64,7 +55,7 @@
                         name="keterangan">{{ $berita->keterangan }}</textarea>
                 </div>
                 @error('keterangan')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger text-white">{{ $message }}</div>
                 @enderror
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>
@@ -88,7 +79,7 @@
                                         id="kategori" name="kategori" placeholder="Kategori">
                                 </div>
                                 @error('kategori')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="modal-footer">
