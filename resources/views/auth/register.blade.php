@@ -144,7 +144,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="mb-3">
-                                    <input type="integer" class="form-control @error('phone') is-invalid @enderror"
+                                    <input type="text" class="form-control @error('phone') is-invalid @enderror"
                                         name="phone" value="{{ old('phone') }}" placeholder="No Telephone"
                                         aria-label="No Telephone" aria-describedby="phone-addon">
                                 </div>

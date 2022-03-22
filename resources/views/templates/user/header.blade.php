@@ -33,10 +33,10 @@
                 </li>
                 <li><a class="nav-link scrollto" href="https://fliphtml5.com/bookcase/sdxlx">Perpustakaan</a></li>
                 {{-- <li><a class="nav-link scrollto" href="{{ url('/') }}#pricing">Pricing</a></li> --}}
-                <li><a class="nav-link scrollto" href="{{ url('/') }}#contact">Contact</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/') }}#testimonials">Team</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/') }}#galeri">Galeri</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/') }}#berita">Berita</a></li>
+                <li><a class="nav-link scrollto" href="{{ url('/') }}#contact">Kontak</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/login') }}">Login</a></li>
                 <li><a class="nav-link scrollto" href="{{ url('/register/ppdb') }}">PPDB</a></li>
                 {{-- <li><a class="getstarted scrollto" href="{{ url('/') }}#about">Get Started</a></li> --}}

@@ -1412,7 +1412,9 @@ section {
     color: #217bbc;
 }
 .contact .info .email,
-.contact .info .phone {
+.contact .info .phone,
+.contact .info .address,
+.contact .info .instagram {
     margin-top: 40px;
 }
 .contact .info .email:hover i,

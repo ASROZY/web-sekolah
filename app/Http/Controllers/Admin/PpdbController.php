@@ -14,7 +14,7 @@ class PpdbController extends Controller
 {
     public function index()
     {
-        $pendaftar = User::where('type', 3)->paginate(10);
+        $pendaftar = User::where('type', 3)->orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.ppdb.index', compact('pendaftar'));
     }
@@ -189,6 +189,19 @@ class PpdbController extends Controller
         $data = Formulir::where('user_id', Auth::user()->id)->first();
 
         return view('admin.ppdb.formulir', compact('data'));
+    }
+
+    public function statusPpdb(Request $request)
+    {
+        $ppdb = Formulir::where('user_id', $request->id)->first();
+        $ppdb->status = $request->status;
+        $ppdb->save();
+        $status = $request->status == 1 ? 'diterima' : 'ditolak';
+
+        return json_encode([
+            'success' => true,
+            'message' => 'Status PPDB berhasil ' . $status
+        ]);
     }
 
     public function deletePpdb(Request $request)

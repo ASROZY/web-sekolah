@@ -53,6 +53,7 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('admin/kategori/tambah', [BeritaController::class, 'storeKategori']);
 
     Route::get('ppdb/pendaftar', [PpdbController::class, 'index']);
+    Route::post('ppdb/status', [PpdbController::class, 'statusPpdb  ']);
     Route::get('ppdb/{id}/detail', [PpdbController::class, 'detailPpdb']);
     Route::post('ppdb/delete', [PpdbController::class, 'deletePpdb']);
 

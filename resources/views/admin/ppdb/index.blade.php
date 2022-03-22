@@ -61,9 +61,15 @@
                                         data-original-title="Detail Data">
                                         Detail Data
                                     </a>
+                                    @if ($item->ppdb->status == 0)
+                                        <button class="btn btn-sm btn-secondary"
+                                            onclick="statusPpdb({{ $item->id }})">
+                                            Status
+                                        </button>
+                                    @endif
                                 @endif
                                 <button class="btn btn-sm btn-danger" onclick="deletePpdb({{ $item->id }})">
-                                    Hapus
+                                    Hapus Data
                                 </button>
                             </td>
                         </tr>
@@ -115,6 +121,62 @@ type="text/javascript"></script>
         }
 
     });
+
+    function statusPpdb(id) {
+        Swal.fire({
+            title: 'Konfirmasi status PPDB Online',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Terima',
+            denyButtonText: 'Tolak',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '{{ url('ppdb/status') }}',
+                    type: "post",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id: id,
+                        status: 1
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.success) {
+                            Swal.fire(res.message, '', 'success');
+                            location.reload();
+                        }
+                    },
+                    error: function(e) {
+                        Swal.fire('Terjadi kesalahan!! silakan coba beberapa lagi', '',
+                            'error');
+                    }
+                })
+            } else if (result.isDenied) {
+                $.ajax({
+                    url: '{{ url('ppdb/status') }}',
+                    type: "post",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id: id,
+                        status: 2
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.success) {
+                            Swal.fire(res.message, '', 'success');
+                            location.reload();
+                        }
+                    },
+                    error: function(e) {
+                        Swal.fire('Terjadi kesalahan!! silakan coba beberapa lagi', '',
+                            'error');
+                    }
+                })
+            }
+        });
+    }
 
     function deletePpdb(id) {
         Swal.fire({

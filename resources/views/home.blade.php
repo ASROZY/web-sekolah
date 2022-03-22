@@ -28,7 +28,7 @@
                                 alt="{{ $item->banner }}">
                         </div>
                     @empty
-                        Banner Kosong
+                        <div class="text-center">Banner Kosong</div>
                     @endforelse
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -44,7 +44,7 @@
             </div>
 
             <div class="row icon-boxes mt-1">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                {{-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                     data-aos-delay="200">
                     <div class="icon-box">
                         <div class="icon"><i class="ri-stack-line"></i></div>
@@ -53,16 +53,26 @@
                             <li>Tahasus Kitab Kuning </li>
                             <li>Sorongan Al-Qur'an</li>
                             <li>Tahfidzul Qur'an</li>
+
+                        </p>
+                    </div>
+                </div> --}}
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0 justify-content-center" data-aos="zoom-in"
+                    data-aos-delay="300">
+                    <div class="icon-box py-2">
+                        <div class="icon"><i class="ri-palette-line"></i></div>
                         <h4 class="title"><a href="">PROGRAM LIFE SKILL</a></h4>
-                        <li>Budidaya</li>
-                        <li>Tataboga</li>
+                        <p class="description">
+                            <li>Budidaya</li>
+                            <li>Tataboga</li>
                         </p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0 justify-content-center" data-aos="zoom-in"
                     data-aos-delay="300">
-                    <div class="icon-box">
+                    <div class="icon-box py-2">
                         <div class="icon"><i class="ri-palette-line"></i></div>
                         <h4 class="title"><a href="">FASILITAS</a></h4>
                         <p class="description">
@@ -80,9 +90,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0 justify-content-center" data-aos="zoom-in"
                     data-aos-delay="400">
-                    <div class="icon-box">
+                    <div class="icon-box py-2">
                         <div class="icon"><i class="ri-command-line"></i></div>
                         <h4 class="title"><a href="">KURIKULUM</a></h4>
                         <p class="description">
@@ -92,9 +102,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0 justify-content-center" data-aos="zoom-in"
                     data-aos-delay="500">
-                    <div class="icon-box">
+                    <div class="icon-box py-2">
                         <div class="icon"><i class="ri-fingerprint-line"></i></div>
                         <h4 class="title"><a href="">EKTRAKULIKULER</a></h4>
                         <li>PRAMUKA</li>
@@ -110,40 +120,6 @@
             </div>
         </div>
     </section><!-- End Hero -->
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Identitas Sekolah</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. </p>
-            </div>
-
-            <div class="row content">
-                <div class="col-lg-5">
-                    <ul>
-                        <li><i class="ri-check-double-line"></i> Nama : SMP TERPADU DARUR ROJA</li>
-                        <li><i class="ri-check-double-line"></i> NPSN : 20576014</li>
-                        <li><i class="ri-check-double-line"></i> Akreditasi : B</li>
-                        <li><i class="ri-check-double-line"></i> Kode Pos : 66152</li>
-                        <li><i class="ri-check-double-line"></i> Alamat : Jl. Kh. Wahid Hasyim Nomor 01, Selokajang,
-                            Kec. Srengat, Kab. Blitar,
-                            Jawa Timur</li>
-                        <li><i class="ri-check-double-line"></i> Kepala Sekolah : Andik Prasetyo Wibowo</li>
-                        <li><i class="ri-check-double-line"></i> Operator : MIFTAKHUL 'ULUM</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0">
-                    <p>
-                        SMP Terpadu Darur Roja merupakan salah satu satuan pendidikan dengan jenjang SMP yang
-                        bertempat di Selokajang, Kec. Srengat, Kab. Blitar, Jawa Timur.
-                    </p>
-                    <a href="https://dapo.dikdasmen.kemdikbud.go.id/sekolah/AD044AD16AA6B5B8D97F"
-                        class="btn-learn-more">Profil lengkap</a>
-                </div>
-            </div>
-        </div>
-    </section><!-- End About Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
@@ -361,7 +337,7 @@
                 </div>
             </div>
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="300">
-                @foreach ($album as $item)
+                @forelse ($album as $item)
                     @foreach ($item->foto as $galeri)
                         <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $item->id }}">
                             <div class="portfolio-wrap">
@@ -380,7 +356,9 @@
                             </div>
                         </div>
                     @endforeach
-                @endforeach
+                @empty
+                    <div class="text-center">Galeri Kosong</div>
+                @endforelse
             </div>
         </div>
     </section><!-- End Portfolio Section -->
@@ -417,23 +395,19 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-
             <div class="section-title">
-                <h2>Contact</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                <h2>Kontak</h2>
+                {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
                     sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
             </div>
-
             <div>
                 <iframe style="border:0; width: 100%; height: 270px;"
                     src="https://maps.google.com/maps?ll=-8.1017098,112.0839805&q=SMA TERPADU DARUR ROJA&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" allowfullscreen></iframe>
             </div>
-
             <div class="row mt-5">
-
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="info">
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
@@ -458,31 +432,27 @@
                             <h4>Instagram:</h4>
                             <p>smptdr27</p>
                         </div>
-
                     </div>
-
                 </div>
+                {{-- <div class="col-lg-8 mt-5 mt-lg-0">
 
-                <div class="col-lg-8 mt-5 mt-lg-0">
-
-                    {{-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name"
-                                    placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-3">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject"
-                                placeholder="Subject" required>
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                required></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="my-3">
                             <div class="loading">Loading</div>
@@ -490,10 +460,25 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form> --}}
+                    </form>
 
+                </div> --}}
+                <div class="col-lg-6">
+                    <p>Detail Sekolah:</p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i> Nama : SMP TERPADU DARUR ROJA</li>
+                        <li><i class="ri-check-double-line"></i> NPSN : 20576014</li>
+                        <li><i class="ri-check-double-line"></i> Akreditasi : B</li>
+                        <li><i class="ri-check-double-line"></i> Kode Pos : 66152</li>
+                        <li><i class="ri-check-double-line"></i> Alamat : Jl. Kh. Wahid Hasyim Nomor 01, Selokajang,
+                            Kec. Srengat, Kab. Blitar,
+                            Jawa Timur</li>
+                        <li><i class="ri-check-double-line"></i> Kepala Sekolah : Andik Prasetyo Wibowo</li>
+                        <li><i class="ri-check-double-line"></i> Operator : MIFTAKHUL 'ULUM</li>
+                    </ul>
+                    <a href="https://dapo.dikdasmen.kemdikbud.go.id/sekolah/AD044AD16AA6B5B8D97F"
+                        class="btn btn-primary">Profil lengkap</a>
                 </div>
-
             </div>
 
         </div>

@@ -622,10 +622,10 @@
                                                 @elseif (Auth::user()->ppdb->status == 2)
                                                     <div class="alert alert-danger alert-dismissible fade show  text-white "
                                                         role="alert">
-                                                        <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                                                        <span class="alert-text"><strong>Ditolak!</strong> Pendaftaran
-                                                            anda
-                                                            telah ditolak!</span>
+                                                        <span class="alert-text"><strong>Ditolak!</strong> Mohon Maaf
+                                                            Pendaftaran
+                                                            anda ditolak oleh Admin, Terima kasih atas partisipasi anda dan
+                                                            tetap semangat!</span>
                                                         <button type="button" class="btn-close"
                                                             data-bs-dismiss="alert" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
